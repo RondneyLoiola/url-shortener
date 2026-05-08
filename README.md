@@ -1,98 +1,219 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
-</p>
+# 🔗 URL Shortener - Encurtador de Links
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+Um encurtador de URLs moderno e eficiente construído com NestJS, MongoDB e TypeScript. Similar ao Bitly, permite transformar URLs longas em links curtos e rastreáveis.
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+![NestJS](https://img.shields.io/badge/nestjs-%23E0234E.svg?style=for-the-badge&logo=nestjs&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
+![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
 
-## Description
+## ✨ Funcionalidades
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+- ✅ Encurtamento de URLs longas
+- ✅ Redirecionamento automático
+- ✅ Contador de cliques/acessos
+- ✅ Estatísticas detalhadas por link
+- ✅ Códigos únicos de 7 caracteres
+- ✅ API RESTful
 
-## Project setup
+## 🚀 Tecnologias
 
+- **[NestJS](https://nestjs.com/)** - Framework Node.js progressivo
+- **[MongoDB](https://www.mongodb.com/)** - Banco de dados NoSQL
+- **[Mongoose](https://mongoosejs.com/)** - ODM para MongoDB
+- **[TypeScript](https://www.typescriptlang.org/)** - Superset JavaScript
+- **[nanoid](https://github.com/ai/nanoid)** - Gerador de IDs únicos
+
+## 📋 Pré-requisitos
+
+Antes de começar, você precisa ter instalado:
+
+- [Node.js](https://nodejs.org/) (v16 ou superior)
+- [MongoDB](https://www.mongodb.com/try/download/community) (v4.4 ou superior)
+- [npm](https://www.npmjs.com/) ou [yarn](https://yarnpkg.com/)
+
+## 🔧 Instalação
+
+1. Clone o repositório
 ```bash
-$ pnpm install
+git clone https://github.com/seu-usuario/url-shortener.git
+cd url-shortener
 ```
 
-## Compile and run the project
-
+2. Instale as dependências
 ```bash
-# development
-$ pnpm run start
-
-# watch mode
-$ pnpm run start:dev
-
-# production mode
-$ pnpm run start:prod
+npm install
 ```
 
-## Run tests
+3. Configure as variáveis de ambiente
 
-```bash
-# unit tests
-$ pnpm run test
-
-# e2e tests
-$ pnpm run test:e2e
-
-# test coverage
-$ pnpm run test:cov
+Crie um arquivo `.env` na raiz do projeto:
+```env
+MONGODB_URI=mongodb://localhost:27017/url-shortener
+PORT=3000
+BASE_URL=http://localhost:3000
 ```
 
-## Deployment
-
-When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
-
-If you are looking for a cloud-based platform to deploy your NestJS application, check out [Mau](https://mau.nestjs.com), our official platform for deploying NestJS applications on AWS. Mau makes deployment straightforward and fast, requiring just a few simple steps:
-
+4. Inicie o MongoDB
 ```bash
-$ pnpm install -g @nestjs/mau
-$ mau deploy
+# Linux/Mac
+mongod
+
+# Windows
+# Inicie o serviço MongoDB
 ```
 
-With Mau, you can deploy your application in just a few clicks, allowing you to focus on building features rather than managing infrastructure.
+5. Execute a aplicação
+```bash
+# Desenvolvimento
+npm run start:dev
 
-## Resources
+# Produção
+npm run build
+npm run start:prod
+```
 
-Check out a few resources that may come in handy when working with NestJS:
+## 📡 API Endpoints
 
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Deploy your application to AWS with the help of [NestJS Mau](https://mau.nestjs.com) in just a few clicks.
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
+### Criar URL Curta
 
-## Support
+```http
+POST /shorten
+Content-Type: application/json
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+{
+  "url": "https://www.exemplo.com/pagina-muito-longa"
+}
+```
 
-## Stay in touch
+**Resposta:**
+```json
+{
+  "originalUrl": "https://www.exemplo.com/pagina-muito-longa",
+  "shortUrl": "http://localhost:3000/abc1234",
+  "shortCode": "abc1234"
+}
+```
 
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+### Redirecionar
 
-## License
+```http
+GET /:shortCode
+```
 
-Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+Redireciona automaticamente para a URL original.
+
+### Obter Estatísticas
+
+```http
+GET /stats/:shortCode
+```
+
+**Resposta:**
+```json
+{
+  "_id": "...",
+  "originalUrl": "https://www.exemplo.com/pagina-muito-longa",
+  "shortCode": "abc1234",
+  "clicks": 42,
+  "createdAt": "2024-01-15T10:30:00.000Z"
+}
+```
+
+## 🧪 Testando
+
+### Com cURL
+
+```bash
+# Criar URL curta
+curl -X POST http://localhost:3000/shorten \
+  -H "Content-Type: application/json" \
+  -d '{"url": "https://www.google.com"}'
+
+# Ver estatísticas
+curl http://localhost:3000/stats/abc1234
+```
+
+### Com Postman ou Insomnia
+
+1. Importe a coleção de exemplos (em breve)
+2. Execute os requests de teste
+
+## 📂 Estrutura do Projeto
+
+```
+url-shortener/
+├── src/
+│   ├── urls/
+│   │   ├── schemas/
+│   │   │   └── url.schema.ts      # Schema do MongoDB
+│   │   ├── urls.controller.ts     # Rotas da API
+│   │   ├── urls.service.ts        # Lógica de negócio
+│   │   └── urls.module.ts         # Módulo NestJS
+│   ├── app.module.ts              # Módulo principal
+│   └── main.ts                    # Entry point
+├── package.json
+└── README.md
+```
+
+## 🛠️ Scripts Disponíveis
+
+```bash
+# Desenvolvimento
+npm run start:dev
+
+# Build
+npm run build
+
+# Produção
+npm run start:prod
+
+# Testes
+npm run test
+
+# Linting
+npm run lint
+```
+
+## 🎯 Próximas Funcionalidades
+
+- [ ] Autenticação de usuários
+- [ ] Dashboard com analytics
+- [ ] Expiração automática de links
+- [ ] Links personalizados (custom aliases)
+- [ ] QR Code para URLs
+- [ ] Rate limiting
+- [ ] Cache com Redis
+- [ ] Domínio customizado
+
+## 🤝 Como Contribuir
+
+Contribuições são bem-vindas! Siga os passos:
+
+1. Fork o projeto
+2. Crie uma branch para sua feature (`git checkout -b feature/MinhaFeature`)
+3. Commit suas mudanças (`git commit -m 'Adiciona MinhaFeature'`)
+4. Push para a branch (`git push origin feature/MinhaFeature`)
+5. Abra um Pull Request
+
+## 📝 Licença
+
+Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+
+## 👨‍💻 Autor
+
+Seu Nome
+- GitHub: [@RondneyLoiola](https://github.com/RondneyLoiola)
+- LinkedIn: [rondneyloiola](https://linkedin.com/in/rondneyloiola)
+
+## 📞 Contato
+
+Tem alguma dúvida ou sugestão? Entre em contato!
+
+- Email: rondney.loiola1@gmail.com
+- LinkedIn: [rondneyloiola](https://linkedin.com/in/rondneyloiola)
+
+---
+
+⭐ Se este projeto te ajudou, deixe uma estrela!
+
+Feito com ❤️ e ☕
